@@ -1,0 +1,12 @@
+package next;
+
+public class ddd {
+	public static void main(String[] args) {
+		displayObject(new bbb)(1,"red",False);
+		displayObject(new ccc(1,1,"black",true));
+	}
+	
+	public static void displayObject(aaa object) {
+		System.out.println("created on "+object.getDateCreated()+".Color is "+object.getColor());
+	}
+}
