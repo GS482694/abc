@@ -1,0 +1,20 @@
+package next;
+
+public class ddd {
+	public static void main(String[] args) {
+	Object object1=new bbb(1);
+	Object object2=new ccc(1,1);
+	
+	displayObject(object1);
+	disPlayObject(object2);
+		}
+	public static void displayObject(Object object) {
+		if(object instanceof bbb) {
+			System.out.println("The circle area is "+((bbb)object).getarea());
+			System.out.println("The circle diameter is "+((bbb)object).getDiameter());
+		}
+		else if(object instanceof ccc) {
+			System.out.println("The rectangle area is "+((ccc)object).getArea());
+		}
+	}
+}
