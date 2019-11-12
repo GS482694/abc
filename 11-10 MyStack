@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+
+import org.omg.CORBA.Object;
+
+public class MyStack{
+	private ArrayList<Object> list=new ArrayList<>();
+	
+	public boolean isEmpty(){
+		return list.isEmpty();
+	}
+	
+	public boolean getSize(){
+		return list.size();
+	}
+	
+	public Object peek(){
+		return list.get(getSize()-1);
+	}
+	
+	public Object pop(){
+		Object o=list.get(getSize()-1);
+		list.remove(getSize()-1);
+		return o;
+	}
+	
+	@Override
+	public String to string(){
+		return "stack: "+list.toString();
+	}
+}
