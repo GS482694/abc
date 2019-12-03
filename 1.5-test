@@ -1,0 +1,38 @@
+public class hhh {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		java.util.Scanner input =new java.util.Scanner(System.in);
+		int[] sum=new int[110];
+		System.out.print("Enter ten numbers: ");
+		int num=0;
+		for(int i=0;i<10;i++){
+			int n=input.nextInt();
+			if(num==0){
+				sum[0]=n;
+				num++;
+			}
+			else{
+				int flag=0;
+				for(int j=0;j<num;j++){
+					if(sum[j]==n){
+						flag++;
+						break;
+					}
+			}
+			if(flag==0){
+				sum[num]=n;
+				num++;
+			}
+				
+		}
+	}
+		System.out.println("The number of distinct number is "+num);
+		System.out.print("The distinct numbers are: ");
+		for(int i=0;i<num;i++){
+			System.out.print(sum[i]+" ");
+		}
+		
+	}
+
+}
