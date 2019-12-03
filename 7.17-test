@@ -1,0 +1,65 @@
+import java.util.Scanner;
+public class Student {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("请输入学生总人数: ");
+		int num = sc.nextInt();
+		int[] arr = new int[num];
+		double[] chengji_arr = new double[num]; //存放成绩的
+		String[] String_arr = new String[num]; //存放姓名的
+		String chengjis = "";
+		String names = "";
+		for (int i = 0; i < arr.length && i < String_arr.length && i < chengji_arr.length; i++) {
+			arr[i] = i;
+			int s = 0;
+			Students st = new Students();
+			System.out.println("请输入第" + (arr[i] + 1) + "个学生的序号！");
+			st.setId(sc.nextInt());
+			System.out.println("请输入第" + (arr[i] + 1) + "个学生的姓名！");
+			st.setName(sc.next());
+			System.out.println("请输入第" + (arr[i] + 1) + "个学生的成绩！");
+			st.setChengji(sc.nextDouble());
+			String_arr[i] = st.getName(); //保存成绩
+			chengji_arr[i] = st.getChengji();
+		}
+		int max = 0;
+		int tmp = 0;
+		for (int i = 0; i < chengji_arr.length; i++) {
+			max = i;
+			for (int j = i + 1; j < chengji_arr.length; j++) {
+				if (chengji_arr[max] < chengji_arr[j])
+					max = j;// 记下较大数位置，再次比较，直到最大
+			}
+			if (i != max) {
+				tmp = (int)chengji_arr[i];
+				chengji_arr[i] = chengji_arr[max];
+				chengji_arr[max] = tmp;
+			}
+		}
+		for (int i = 0; i < chengji_arr.length; i++)
+			System.out.print("成绩为：" + chengji_arr[i] + " ");
+	}
+}
+class Students {
+	private int id;
+	private String name;
+	private double chengji;
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setChengji(double chengji) {
+		this.chengji = chengji;
+	}
+	public double getChengji() {
+		return chengji;
+	}
+}
