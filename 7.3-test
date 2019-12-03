@@ -1,0 +1,25 @@
+public class hhh {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		java.util.Scanner input =new java.util.Scanner(System.in);
+		int[] sum=new int[110];
+		System.out.print("Enter the integers between 1 and 100: ");
+		for(int i=0;i<10;i++){
+			int n=input.nextInt();
+			sum[n]++;
+		}
+		for(int i=1;i<100;i++){
+			if(sum[i]!=0){
+				if(sum[i]==1){
+					System.out.println(i+" occurs "+sum[i]+" time");
+				}
+				else{
+					System.out.println(i+" occurs "+sum[i]+" times");
+				}	
+			}
+				
+		}
+	}
+
+}
