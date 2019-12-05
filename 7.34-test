@@ -1,0 +1,21 @@
+package third;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class ddd{
+public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter the letters: ");
+    String ch = sc.nextLine();
+    List list =new ArrayList();
+    for (int i = 0; i <ch.length() ; i++){
+        String st = ch.substring(i,i+1);
+        list.add(st);
+    }
+    java.util.Collections.sort(list);
+    for(int i=0;i<list.size();i++) {
+    	System.out.print(list.get(i)+" ");
+    }
+    
+}
+}
